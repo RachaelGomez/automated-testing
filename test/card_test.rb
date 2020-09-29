@@ -1,6 +1,6 @@
 require_relative 'test_helper'
 
-describe Card do
+describe "Card" do
   describe "You can create a Card instance" do
 
     it "Can be created" do
@@ -26,7 +26,10 @@ describe Card do
     it "to_s returns a readable String value logically for values 2-10" do
       # Test to ensure that to_s works for cards values 2-10
       # for example:  "2 of diamonds"
-    end
+      card = Card.new(3, :diamonds)
+      expect(card.to_s).must_equal "3 of diamonds"
+      end
+
 
     it "to_s returns a readable String value for Ace, Jack, Queen, King" do
       # Test to ensure that to_s works for cards values 1, and 11-13
